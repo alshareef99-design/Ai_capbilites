@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Diwan — البحث المؤسسي</title>
+    <meta
+      name="description"
+      content="Enterprise search, Q&A, summarization, document analysis, extraction, and decision support. البحث المؤسسي والمساعدات المعرفية."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+    </div>
+
+    <header class="nav">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">د</span>
+        <div>
+          <strong>Diwan</strong>
+          <span>ديوان · enterprise knowledge</span>
+        </div>
+      </div>
+      <p class="mode" id="modeBanner" hidden></p>
+    </header>
+
+    <main class="shell">
+      <section class="hero">
+        <p class="kicker">ست قدرات · six capabilities</p>
+        <h1>البحث المؤسسي، ثم الإجابة والتحليل والقرار.</h1>
+        <p class="lede">
+          Grounded LangGraph workflows over your policies and contracts — search, Q&amp;A,
+          summarize, analyze, extract, decide.
+        </p>
+      </section>
+
+      <div class="caps" role="tablist" aria-label="Capability">
+        <button type="button" class="cap is-active" data-cap="auto" aria-selected="true">Auto</button>
+        <button type="button" class="cap" data-cap="search" aria-selected="false">Search · بحث</button>
+        <button type="button" class="cap" data-cap="qa" aria-selected="false">Q&amp;A</button>
+        <button type="button" class="cap" data-cap="summarize" aria-selected="false">Summarize · تلخيص</button>
+        <button type="button" class="cap" data-cap="analyze" aria-selected="false">Analyze · تحليل</button>
+        <button type="button" class="cap" data-cap="extract" aria-selected="false">Extract · استخراج</button>
+        <button type="button" class="cap" data-cap="decide" aria-selected="false">Decide · قرار</button>
+      </div>
+
+      <form id="runForm" class="composer">
+        <label class="sr-only" for="query">Query</label>
+        <textarea
+          id="query"
+          name="query"
+          rows="3"
+          maxlength="4000"
+          required
+          placeholder="How many competitive quotes are required above 50,000 SAR?"
+        ></textarea>
+        <label class="sr-only" for="extra">Optional pasted text</label>
+        <textarea
+          id="extra"
+          name="extra"
+          rows="2"
+          maxlength="24000"
+          placeholder="Optional: paste extra text to analyze alongside the knowledge base"
+        ></textarea>
+        <div class="composer-row">
+          <div class="chips" id="chips"></div>
+          <button type="submit" class="primary" id="runBtn">Run</button>
+        </div>
+      </form>
+
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+
+      <div class="grid">
+        <section class="card" id="stepsCard">
+          <h2>Graph</h2>
+          <ol class="steps" id="steps">
+            <li class="muted">Safety → classify → retrieve → grade → capability</li>
+          </ol>
+        </section>
+        <section class="card" id="resultCard" aria-live="polite">
+          <h2 id="resultTitle">Result</h2>
+          <div id="result">
+            <p class="muted">Ask a policy question, or try a sample chip. The corpus includes procurement, security, leave, a vendor contract, and a cloud-migration memo — Arabic and English.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span id="docCount"></span>
+      <a href="/v1/health">Health</a>
+      <a href="/docs">API</a>
+    </footer>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

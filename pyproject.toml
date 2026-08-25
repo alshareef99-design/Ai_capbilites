@@ -1,0 +1,13 @@
+[project]
+name = "diwan"
+version = "1.0.0"
+description = "Enterprise AI capabilities: search, Q&A, summarization, analysis, extraction, decision support."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"

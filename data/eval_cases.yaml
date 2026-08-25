@@ -1,0 +1,36 @@
+cases:
+  - id: quotes_en
+    capability: qa
+    query: How many competitive quotes are required above 50,000 SAR?
+    expect_any:
+      - "three"
+      - "3"
+  - id: leave_ar
+    capability: qa
+    query: كم يوم الإجازة السنوية للموظف؟
+    expect_any:
+      - "21"
+  - id: incident_ar
+    capability: qa
+    query: خلال كم ساعة يجب الإبلاغ عن حادث أمني؟
+    expect_any:
+      - "ساعة"
+      - "1"
+  - id: unknown
+    capability: qa
+    query: What is the cafeteria lunch menu for Friday?
+    expect_any:
+      - "do not know"
+      - "not in"
+      - "لا أعرف"
+  - id: extract_sla
+    capability: extract
+    query: Extract SLA and liability from the vendor contract
+    expect_any:
+      - "99.5"
+  - id: decide_cloud
+    capability: decide
+    query: Should we migrate production to Azure or stay on-premises?
+    expect_any:
+      - "Azure"
+      - "أزور"
